@@ -2,14 +2,25 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>The API of John Alm Mårtensson</title>
+  <title>The Personal API of Me</title>
 </head>
 <body>
-<pre>
+<script type="text/javascript">
+  window.onload = function()
   {
-    "surname" : "John",
-    "last-name" : "Alm Mårtensson",
-  }
-</pre>
+    var me          = {
+          "surname"   : "John",
+          "last-name" : "Alm Mårtensson",
+          "jobs"      : [ {} ],
+          "projects"  : [ {} ],
+          "homes"     : [ {} ],
+          "interests" : [ {} ]
+        },
+        myContainer = document.getElementById( "my-container" );
+
+    myContainer.innerHTML = JSON.stringify( me, null, '\t' );
+  };
+</script>
+<pre id="my-container"></pre>
 </body>
 </html>
